@@ -1,0 +1,33 @@
+I need an expert in C# .net or VB #net programmer, that knows how to use binary.com APIs in order to develop a windows app software that will automate trading purchases based on predefined strategy/logic. The software will have to do the following:
+
+a) The Programmer will need to register the app at https://developers.binary.com/applications/ in order to obtain an app_id;
+
+b) Connect the user´s binary account using his token authorization to load his balance and buy/submit the trades assigned with his account;
+
+c) Simultaneous read all the last digits of the 7 markets (R_10, R_25, R_50, R_75, R_100, BEAR and BULL) in order to convert to even/odd and check consecutive occourences to match the parameter defined in "sequence trigger" field by the user associated to each market, in order to execute a buy order;
+
+d) In case of LOSS, the software will handle the martingale sequence based on the multiplier parameter defined by the user associated with the market. In case "Unified Martingale" option be selected, the software will use the next trigged of another market to place the buy order, replacing it´s stake value for the martingale-stake needed to recover the actual loss;
+
+e) The software will also need to check before each buy order, the stoploss based on the parameter defined by the user;
+
+f) The software will need to collect the results and calculate variables during the execution like: number of wins, number of loss, max. consecutive loss, calculate the profit, update the balance and rank the max same digit ocourrence verified during execution;
+
+g) The software will need to play 6 different sounds: for buy action ("buy even digit" ou "buy odd digit"), when win ("yeah") and when loss ("oh not"),when reach the target ("congratulations") and when stoploss ("stop loss"). The way files need to be in a folder and could be replaced for other diferent sounds. Will need to have an option to put in "silence mode";
+
+h) The software will need to be able to determinate the trade/buy moment for each of the markets where the user can define different "stake", "martingale multiplier", # of consecutive occourence of same type digit (the trigger known as "sequence trigger"), # of ticks to pause (in case of loss known as "Loss break") and if buy in reverse (ex: if reverse=yes, after a sequence of even buy odd);
+
+i) The software will also have an option to set/lock the same parameters (mentioned above) to all markets if the ALL flag is selected;
+
+j) The software will need to register all executed tradings and its results in a SUMMARY (log) grid;
+
+k) The software will also be possible to send the trading notification msgs/status to the user´s telegram thru the binary API method;
+
+l) The input trading parameters of each market can be changed during execution time and the software must to consider the new value inputed for the next verifications/actions;
+
+m) A button to Start / Pause the Execution;
+
+n) Save the max sequence registered for each market, during actual/last executions, to be used by the user as a reference to better decide the "Sequence Trigger" "Loss Break" parameters;
+
+o) The software will need to expland and reduce horizontal main form width based on Hide/View summary selection.
+
+p) All last digits retrieve, verifications, decision, buy action and print result need to happen in less than 2 seconds !

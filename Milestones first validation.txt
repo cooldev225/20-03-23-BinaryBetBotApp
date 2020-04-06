@@ -1,0 +1,99 @@
+LAST MILESTONES VALIDATIONS / PAYMENT:
+
+$20/$20 - Finish the MG Tries and Loss Break logic - all working correct;
+      My comments: --- During my tests, it is not working !
+      status = OK / pay 100%
+                                                                                           subtotal: $20
+$10/$20 - Have all [input parameters] values, preloaded from the config, 
+      editable in the grid and updating the [Next Stake due Martingale] 
+      field of the markets during each MG mode;
+      My Comments: --- The Next Stake due MG is not being calculated and updated
+      following my instructions (see field specifications)
+      status = PARTIAL / paid 50%
+                                                                                           subtotal: $30
+$10/$20 - Having the bot always using/considering the values set in the grid fields 
+      (as variables). Example, If I change the Martingale Multiplier in a certain 
+      market, the bot will need to use that new value from now on....
+      My Comments: ---- The bot is not getting the stake vlue when in MG mode from 
+      [Next Stake due Martingale] field. centaily, because it is still not being 
+      calculated and update there
+      status = PARTIAL / paid 50%      
+                                                                                           subtotal: $40
+$10/$20 - When close the app, ask the user if he want to update the [Your token]+[Target]
+      +[StopLoss]+[input parameters]+[Max Sequence Registered] in the config.xml
+      My Comments: ---- The bot is updating only [input parameters] fields in the config.xml
+      still pending turn [Your token]+[Target]+[StopLoss] into editable fields and also update 
+      the config.xml and also saves the [Max Sequence Registered] whe the app is closed
+      status = PARTIAL / paid 50%      
+                                                                                           subtotal: $50   
+$10/$20 - Have [current balance], [%], [runs], [win/loss] and [total profit] being properly
+      calculated
+      My Comments: ---- [%] and [TotalProfit] in the bottom can be removed...OK, but [runs] 
+      is not being calculated and the [execution time] (chronometer) is not being displayed.
+      status = PARTIAL / paid 50% 
+                                                                                           subtotal: $60   
+$20 - Show last buys in the top lines of the summary grid, not in the bottom... and print 
+      value in color green (win) or red (loss) and also, hide/show the summary adjusting 
+      the width of the main form.
+      My Comments: ---- I believe it will be completed at final layout adjustments...
+      status = PENDING
+                                                                                           subtotal: $60   
+$20 - Add the button to Start/Pause the bot. When in pause, the bot cannot make buys.. 
+      it will just keep checking/counting the sequences ocourrences...
+      My Comments: OK
+      status = COMPLETED
+                                                                                           subtotal: $80
+$20 - Check token authorization in a webservice (I´ll provide the URL) in order to allow
+      start it.
+      status = PENDING
+                                                                                           subtotal: $80
+$20 - Show a congratulation popup message if profit reaches the target and pause the bot. 
+      Show the STOP LOSS popup message if the negative profit reaches it.
+      status = COMPLETED
+                                                                                           subtotal: $100
+$20 - Replicate/Copy the same [input parameters] entered in ALL colummn to all markets, 
+      if the [On/Off ALL] flag is selected;
+      status = COMPLETED
+                                                                                           subtotal: $120
+$20 - [Unified Martingale] - If enabled, this means that when trigged, the bot will check 
+      if there is any pending [Next Stake due MG] of other markets, will transfer this 
+      value to its correlated field of the trigged market and use this value as the 
+      stake of the buy action;
+      status = PENDING
+                                                                                           subtotal: $120
+$20 - [Silent Mode] On/Off - When off (disabled) = play a buy sound, the win sound and the 
+      loss sound (I´ll send the .wav files)
+      My Comments: [ ] Silent Mode is not working and bot not playing the loss sound, only 
+      when triggers and win
+      status = PARTIAL - paid 50%
+                                                                                           subtotal: $130
+$25 - Reduce and grid lines height + main form layout/color adjustments
+      My Comments: Grid Lines height ajustments OK, but still pending the 
+      status = PARTIAL - paid 50$
+                                                                                           subtotal: $142.50
+$80 - Send me compiled executable AND perfom all my tests in my virtual account and 
+      correct any non-conformity that I found.
+      My Comments: being tested.... need to conclude all pendencies above and what else 
+                  is being addressed during tests... 
+           a) Martingale is wrong when operating with multiple markets enabled;
+           b) Punctuating issue !  in PC of my job and in my brother´s PC the bot is 
+              considering 0.35 as 350 and 2.5 as 250. We need to check this regional 
+              setting compatibility issue !
+           c) Bot is triggering in sequence when Same Digit occourence is ">=" then 
+              [Sequence Trigger] value, when it was to be only one trigger when same 
+              digit occourence "=" [Sequence Trigger], I called it [insistent mode] 
+              and send a proposal to let and and add a control field to check if the 
+              bot will trigger as insistent >= or just when =
+           d) Proposals in QUEUE is not aligned with the initial strategy of the bot, 
+              but I also sent a proposal to add an control field in order to decide if 
+              bot will run in queue mode, or ignore simultaneos triggers (randomize and 
+         chosse only one) and only trigger if there
+         is no buy action in process
+        
+      status = PENDING, ON-GOING
+                                                                                           subtotal: $142.50
+$80 - Send me the source-code and validate that I´ll be to compile the executable in 
+      my PC without errors;
+      My Comments: I didn´t installed VS 2019 yet, but I can ask a friend to validate it. 
+                   Send me the last version with the password
+      Status = PENDING

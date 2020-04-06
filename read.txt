@@ -1,0 +1,37 @@
+
+
+
+Funcionalities & Specifications
+
+Understanding the FORM FIELDS:
+1) [Your Token] - The user will insert his/her binary token hash to authorize the bot to do actions in his account based on the given permissions. The bot will need to verify in a webservice (to be provided) if this inputed token is already registered and allowed to use the bot. If not, the bot will open the browser loading the registration page;
+2) [Start Balance] - If token is authorized, the bot will run and read the user´s account balance at the moment it starts execution and will keep this value here;
+3) [Current Balance] - Based on the Proft/Loss resulted by the trade operation (buy), the bot will calculate and update this field after every win or loss;
+4) [Target] - The amount of gains desired. The bot will stop if the total profit or [Current Balance-Start Balance] be >= [Target]. This value should be saved in the config.xml;
+5) [%] - Is the percentual of total profit already obtained in comparassion to [target];
+6) [StopLoss] -  Is the max amount the user accepts to loose, when starting a Martigale process, the [Current Balance] is the start point to calculate it, because will that in consideration all profit already obtained. This value should be saved in the config.xml;
+--------------
+7) [On/Off] - Each Market will have its own that is to indicate to the bot that needs to be considered on each tick verification. In the case of ALL column, this is only to copy the ALL inputed parameters to market similar fields (act as a default values).This value should be saved in the config.xml;
+8) [Sequence Trigger] - Indicates to the bot, the quantity of same digit type (even or odd) consecutive occourences to trigger a buy action in that marketThis value should be saved in the config.xml;
+9) [Buy Reverse] - if enabled, indicates to the bot if it will buy the oppositive of the trigged sequence type. This value should be saved in the config.xml;
+10) [Defaulf Stake] - The value of a normal buy on each market (not in martingale). This value should be saved in the config.xml;
+11) [Next Stake due MG] - The bot will calculate it based on the Martingale Multipler based on the MG level and will assing zero to it on next win;
+12) [MG Tries before Break] - This tells the bot the quantity of Martingale tries in the same market, using the previous digit type, trying to win and revert the loss. If it continue lossing and sequential MG tries > the value of this field, than bot pause the Martingale and returns to Sequence Trigger, but checks if there is [Loss Break]. If this value = 0, than it returns to the Sequence Trigger verifcation imediately after the first loss. This value should be saved in the config.xml;
+13) [Loss Break] - If <> 0, tells the bot to wait "n" ticks before restart verifying sequence trigger. This value should be saved in the config.xml;
+--------------
+14) [Last Digits] - The bot prints here a string composed by: the last digit type ("O" or "E") + ";" + Consecutive Occourrence Counter, Ex: "O:3" or "O:7" or "E:2" - This will be always changing in the screen for every tick... In the case for ALL colummn, this will be "-"
+15) [# Even Sequences] - This Will act like a counter variable, and will be incremented every time the Even digit sequence occourences matches the [sequence trigger];
+16) [# Odd Sequences] - This Will act like a counter variable, and will be incremented every time the Odd digit sequence occourences matches the [sequence trigger];
+17) [Max Seq. Registered] - This is where the bot will save the max digit type sequence occourence registered in each market during its execution. In the ALL, it will save the biggest value from all markets. This field must be save in the config.xml and will be preloaded in the next app load/run;
+18) [Max Consecutive Loss] - In the case of ALL, this will register the consecutive loss counter independent of the market. In the case of the markets, it will easly centainly occour if the [Unified Martingale] field be disabled.
+--------------
+19) [Your Telegram Token] - The user will inform his/her telegram token so the app will send the notifications as mentioned in the description;
+20) [Silent Mode] - If enabled, the bot will not play the wav files as described in the description;
+21) [Unified Martingale]  - If enabled, this means to the bot that, in case of a loss the bot can use the next buy action from diferent market to apply the Martingale; If it is disabled wil lonly apply the Martingale of that market in the next buy action trigged for that market;
+22) [Summary] - To show or hide the Summary grid - The main form will expand or reduce as described in the description;
+--------------
+23) [Account] - this is a print of this information (users account number) obtained from the API. Part of the code must be replaced by "XXXX";
+24) [Runs] - Counter of number of buy actions executed by the bot;
+25) [Win/Loss] - Print the counter of the quantity of registered Wins and Losses during execution of the bot;
+26) [Total Profit] - Self explained. In case be positive, print in green, in case negative, print it in rede color;
+27) [Time] - Print the duration of the bot execution. If the bot is paused, this counter should pause too...
